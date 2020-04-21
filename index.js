@@ -1,5 +1,5 @@
 // ⭐️ Example Challenge START ⭐️
-
+console.log("MVP --------------------");
 /**
  * ### Challenge `processFirstItem`
  * 
