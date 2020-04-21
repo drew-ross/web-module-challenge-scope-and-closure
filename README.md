@@ -43,7 +43,7 @@ Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
 
-  A:
+  A: Closure allows inner functions to have access to variables defined in an outer function, even after the outer function finishes running.
 
 2. Study the following code, then answer the questions below.
 
@@ -66,8 +66,16 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+
+  A: The inner return function is using closure to access "name" from the outer function. I can tell because the return function is a child of the parent function, which grants it access to variables outside of its scope.
+
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+
+  A: The name variable "Dan" stays the same, but the newRoll variable can change.
+
 c. What is the lexical scope of `newRoll`? 
+
+  A: The return function.
 
 ### Task 3 - Stretch Goals
 
