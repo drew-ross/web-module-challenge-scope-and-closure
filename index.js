@@ -128,8 +128,18 @@ function scoreboard(innings, cb) {
 
 console.log(scoreboard(9, inning));
 
-function inningLarge(){
-  return Math.round(Math.random() * 5);
+function newScoreboard(innings, cbFinalScore, cbInning) {
+  const game = [];
+  for(let i = 0; i < innings; i++) {
+    const currentInning = cbFinalScore(cbInning);
+    currentInning["Inning"] = i + 1;
+    if(i !== 0) {
+      currentInning.Home = (cbInning() + game[i - 1].Home);
+      currentInning.Away = (cbInning() + game[i - 1].Away);
+    }
+    game.push(currentInning);
+  }
+  return game;
 }
 
-console.log(scoreboard(9, inningLarge));
+console.log(newScoreboard(9, finalScore, inning));
