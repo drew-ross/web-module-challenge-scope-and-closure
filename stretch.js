@@ -1,5 +1,6 @@
 console.log("STRETCH --------------------");
 
+// Stretch 1
 (function () {
     var a = b = 3;
 })();
@@ -14,3 +15,15 @@ console.log("b defined? " + (typeof b !== 'undefined'));
 // Because no keyword is used, b is declared as a global variable and is therefore
 // accessible outside of the function. a is function-scope, and is not accessible
 // outside of the function, where console.log is being used.
+
+
+// Stretch 2
+function createBase(base) {
+    return function add(num) {
+        return num + base
+    }
+}
+
+var addSix = createBase(6);
+console.log(addSix(10)); // returns 16
+console.log(addSix(21)); // returns 27
