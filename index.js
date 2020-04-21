@@ -28,17 +28,24 @@ function processFirstItem(stringList, callback) {
  * 
  * 1. What is the difference between counter1 and counter2?
  * 
+ * A: counter1 contains variables in function scope, counter2 mutates a global variable.
+ * 
  * 2. Which of the two uses a closure? How can you tell?
+ * 
+ * A: Both use closure as they both access variabes outside of their scope, but counter1 uses closure in a more
+ * meaningful way, as it keeps track of a variable defined in a function scope (not global).
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
  *
+ * A: counter1 seems preferable in almost all instances as it's better practice not to use global variables.
+ * counter2 might work better in some instances where a global variable is needed.
 */
 
 // counter1 code
 function counterMaker() {
   let count = 0;
   return function counter() {
-    count++;
+    return count++;
   }
 }
 
